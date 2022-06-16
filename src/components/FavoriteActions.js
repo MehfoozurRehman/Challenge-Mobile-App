@@ -9,7 +9,7 @@ import Svg, {
 } from 'react-native-svg';
 import {whiteColor} from '../constants/colors';
 
-export default function FavoriteActions({}) {
+export default function FavoriteActions({onMessage, onRating}) {
   return (
     <View
       style={{
@@ -19,6 +19,7 @@ export default function FavoriteActions({}) {
         padding: 20,
       }}>
       <TouchableOpacity
+        onPress={onRating}
         style={{
           alignItems: 'center',
         }}>
@@ -54,6 +55,7 @@ export default function FavoriteActions({}) {
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
+        onPress={onMessage}
         style={{
           marginVertical: 10,
           alignItems: 'center',
