@@ -17,7 +17,7 @@ import {
 import Svg, {Path, Defs, Pattern, Use, Image} from 'react-native-svg';
 import InputBox from '../components/InputBox';
 
-export default function LoginScreen({navigation}) {
+export default function SignUpScreen({navigation}) {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: baseColor}}>
       <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
