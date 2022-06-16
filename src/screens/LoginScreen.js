@@ -127,7 +127,7 @@ export default function LoginScreen({navigation}) {
                 marginTop: 10,
                 borderRadius: 5,
               }}>
-              <Text>CONNECTEZ VOUS</Text>
+              <Text style={{color: whiteColor}}>CONNECTEZ VOUS</Text>
             </TouchableOpacity>
             <View
               style={{flex: 1, flexDirection: 'row', justifyContent: 'center'}}>

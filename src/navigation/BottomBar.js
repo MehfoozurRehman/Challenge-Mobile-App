@@ -3,23 +3,12 @@ import {Text, View, Button, Image as ImageComponent} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Svg, {Path, Defs, Pattern, Use, Image} from 'react-native-svg';
 import {whiteColor} from '../constants/colors';
-
-function HomeScreen({navigation}) {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Home!</Text>
-      <Button
-        title="Go to Settings"
-        onPress={() => navigation.navigate('Settings')}
-      />
-    </View>
-  );
-}
+import FavoriteScreen from '../screens/FavoriteScreen';
 
 function SettingsScreen({navigation}) {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Settings!</Text>
+      <Text style={{color: whiteColor}}>Settings!</Text>
       <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
     </View>
   );
@@ -35,11 +24,15 @@ export default function BottomBar() {
         tabBarStyle: {
           backgroundColor: 'black',
           height: 50,
+          borderWidth: 0,
         },
+      }}
+      sceneContainerStyle={{
+        backgroundColor: '#242424',
       }}>
       <Tab.Screen
         name="Favorite"
-        component={HomeScreen}
+        component={FavoriteScreen}
         options={{
           tabBarLabel: ({focused}) =>
             focused ? <Text style={{fontSize: 10}}>Favorite</Text> : null,
