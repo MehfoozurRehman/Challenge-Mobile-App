@@ -9,7 +9,7 @@ import Svg, {
 } from 'react-native-svg';
 import {whiteColor} from '../constants/colors';
 
-export default function FavoriteUser({}) {
+export default function FavoriteUser({onClick}) {
   return (
     <View
       style={{
@@ -60,6 +60,7 @@ export default function FavoriteUser({}) {
         </Text>
       </View>
       <TouchableOpacity
+        onPress={onClick}
         style={{
           flexDirection: 'row',
           alignItems: 'center',

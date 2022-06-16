@@ -1,32 +1,33 @@
 import React, {useState} from 'react';
 import {
-  View,
-  Text,
   Image,
   SafeAreaView,
   ScrollView,
+  View,
+  Text,
   TouchableOpacity,
 } from 'react-native';
 import {height, width} from '../constants/constant';
 import FavoriteUser from '../components/FavoriteUser';
 import FavoriteHeader from '../components/FavoriteHeader';
 import FavoriteActions from '../components/FavoriteActions';
-import {Rating, AirbnbRating} from 'react-native-ratings';
-import Svg, {
-  Path,
-  Defs,
-  Pattern,
-  Use,
-  Image as ImageSvg,
-} from 'react-native-svg';
-import {primaryColor} from '../constants/colors';
 import FavoriteRating from '../components/FavoriteRating';
-import CommentriesEntry from '../components/CommentriesEntry';
 import Commentries from '../components/Commentries';
+import {
+  baseColor,
+  baseColorDark,
+  primaryColor,
+  secondaryColor,
+  whiteColor,
+} from '../constants/colors';
+import {Rating} from 'react-native-ratings';
+import LinearGradient from 'react-native-linear-gradient';
+import FavoriteProfile from '../components/FavoriteProfile';
 
 export default function FavoriteScreen({navigation}) {
   const [showCommentries, setShowCommentries] = useState(false);
   const [showRating, setShowRating] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
   const images = [
     'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
     'https://images.unsplash.com/photo-1532798442725-41036acc7489?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
@@ -42,10 +43,12 @@ export default function FavoriteScreen({navigation}) {
         onScroll={() => {
           setShowRating(false);
           setShowCommentries(false);
+          setShowProfile(false);
         }}
         onTouchStart={() => {
           setShowRating(false);
           setShowCommentries(false);
+          setShowProfile(false);
         }}>
         {images.map(image => (
           <Image
@@ -58,7 +61,11 @@ export default function FavoriteScreen({navigation}) {
         ))}
       </ScrollView>
       <FavoriteHeader />
-      <FavoriteUser />
+      <FavoriteUser
+        onClick={() => {
+          setShowProfile(true);
+        }}
+      />
       <FavoriteActions
         onRating={() => {
           setShowRating(true);
@@ -75,6 +82,7 @@ export default function FavoriteScreen({navigation}) {
           }}
         />
       ) : null}
+      {showProfile ? <FavoriteProfile /> : null}
     </SafeAreaView>
   );
 }
