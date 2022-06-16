@@ -115,7 +115,7 @@ export default function LoginScreen({navigation}) {
             />
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('Home');
+                navigation.navigate('HomeScreen');
               }}
               style={{
                 width: '100%',
@@ -132,7 +132,10 @@ export default function LoginScreen({navigation}) {
             <View
               style={{flex: 1, flexDirection: 'row', justifyContent: 'center'}}>
               <Text style={{color: whiteColor}}>Pas de compte? </Text>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('SignUpScreen');
+                }}>
                 <Text style={{color: primaryColor}}>s’enregistrer</Text>
               </TouchableOpacity>
             </View>
