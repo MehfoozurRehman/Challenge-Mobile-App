@@ -1,13 +1,13 @@
 import React from 'react';
 import {Image, View, Text, TouchableOpacity} from 'react-native';
+import {Rating} from 'react-native-ratings';
+import LinearGradient from 'react-native-linear-gradient';
 import {
   baseColorDark,
   primaryColor,
   secondaryColor,
   whiteColor,
 } from '../constants/colors';
-import {Rating} from 'react-native-ratings';
-import LinearGradient from 'react-native-linear-gradient';
 
 export default function FavoriteProfile({}) {
   return (

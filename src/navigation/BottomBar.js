@@ -4,6 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Svg, {Path, Defs, Pattern, Use, Image} from 'react-native-svg';
 import {whiteColor} from '../constants/colors';
 import FavoriteScreen from '../screens/FavoriteScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 function SettingsScreen({navigation}) {
   return (
@@ -168,7 +169,7 @@ export default function BottomBar() {
       />
       <Tab.Screen
         name="User"
-        component={SettingsScreen}
+        component={ProfileScreen}
         options={{
           tabBarLabel: ({focused}) =>
             focused ? <Text style={{fontSize: 10}}>Home</Text> : null,

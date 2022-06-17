@@ -1,27 +1,11 @@
 import React, {useState} from 'react';
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  View,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import {Image, SafeAreaView, ScrollView} from 'react-native';
 import {height, width} from '../constants/constant';
 import FavoriteUser from '../components/FavoriteUser';
 import FavoriteHeader from '../components/FavoriteHeader';
 import FavoriteActions from '../components/FavoriteActions';
 import FavoriteRating from '../components/FavoriteRating';
 import Commentries from '../components/Commentries';
-import {
-  baseColor,
-  baseColorDark,
-  primaryColor,
-  secondaryColor,
-  whiteColor,
-} from '../constants/colors';
-import {Rating} from 'react-native-ratings';
-import LinearGradient from 'react-native-linear-gradient';
 import FavoriteProfile from '../components/FavoriteProfile';
 
 export default function FavoriteScreen({navigation}) {
@@ -49,7 +33,8 @@ export default function FavoriteScreen({navigation}) {
           setShowRating(false);
           setShowCommentries(false);
           setShowProfile(false);
-        }}>
+        }}
+        showsVerticalScrollIndicator={false}>
         {images.map(image => (
           <Image
             key={JSON.stringify(image)}

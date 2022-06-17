@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
+import CommentriesEntry from './CommentriesEntry';
 import Svg, {
   Path,
   Defs,
@@ -7,7 +8,6 @@ import Svg, {
   Use,
   Image as ImageSvg,
 } from 'react-native-svg';
-import CommentriesEntry from './CommentriesEntry';
 
 export default function Commentries({onClose}) {
   return (
@@ -76,7 +76,8 @@ export default function Commentries({onClose}) {
         style={{
           padding: 15,
           height: 300,
-        }}>
+        }}
+        showsVerticalScrollIndicator={false}>
         <CommentriesEntry />
         <CommentriesEntry />
         <CommentriesEntry />

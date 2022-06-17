@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
+import {whiteColor} from '../constants/colors';
 import Svg, {
   Path,
   Defs,
@@ -7,7 +8,6 @@ import Svg, {
   Use,
   Image as ImageSvg,
 } from 'react-native-svg';
-import {whiteColor} from '../constants/colors';
 
 export default function FavoriteActions({onMessage, onRating}) {
   return (

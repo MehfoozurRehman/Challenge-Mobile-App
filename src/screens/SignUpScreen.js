@@ -1,5 +1,7 @@
 import React from 'react';
 import {height} from '../constants/constant';
+import Svg, {Path, Defs, Pattern, Use, Image} from 'react-native-svg';
+import InputBox from '../components/InputBox';
 import {
   SafeAreaView,
   ScrollView,
@@ -14,13 +16,13 @@ import {
   primaryColor,
   whiteColor,
 } from '../constants/colors';
-import Svg, {Path, Defs, Pattern, Use, Image} from 'react-native-svg';
-import InputBox from '../components/InputBox';
 
 export default function SignUpScreen({navigation}) {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: baseColor}}>
-      <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
+      <ScrollView
+        style={{flex: 1, backgroundColor: 'white'}}
+        showsVerticalScrollIndicator={false}>
         <View
           style={{
             backgroundColor: baseColor,
