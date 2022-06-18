@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Svg, { Path, Defs, Pattern, Use, Image } from "react-native-svg";
 import { Camera } from "react-native-feather";
 import {
@@ -16,7 +16,9 @@ import {
   whiteColor,
 } from "../constants/colors";
 
-export default function ProfileScreen() {
+export default function ProfileScreen({ navigation }) {
+  const [isMenu, setIsMenu] = useState(false);
+
   const images = [
     "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "https://images.unsplash.com/photo-1532798442725-41036acc7489?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
@@ -46,7 +48,11 @@ export default function ProfileScreen() {
         }}
       >
         <Text style={{ fontSize: 20, color: whiteColor }}>Mon Profile</Text>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            setIsMenu(!isMenu);
+          }}
+        >
           <Svg
             width={24}
             height={24}
@@ -75,7 +81,45 @@ export default function ProfileScreen() {
           </Svg>
         </TouchableOpacity>
       </View>
-      <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
+      {isMenu ? (
+        <View
+          style={{
+            position: "absolute",
+            top: 80,
+            right: 20,
+            paddingHorizontal: 10,
+            paddingVertical: 10,
+            backgroundColor: baseColorDark,
+            zIndex: 999,
+            borderRadius: 5,
+            elevation: 5,
+          }}
+        >
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("ProfileEdit");
+              setIsMenu(false);
+            }}
+            style={{ padding: 10, paddingVertical: 5 }}
+          >
+            <Text style={{ color: whiteColor }}>Settings</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ padding: 10, paddingVertical: 5 }}>
+            <Text style={{ color: whiteColor }}>Logout</Text>
+          </TouchableOpacity>
+        </View>
+      ) : null}
+
+      <ScrollView
+        style={{ flex: 1 }}
+        showsVerticalScrollIndicator={false}
+        onTouchStart={() => {
+          setIsMenu(false);
+        }}
+        onScroll={() => {
+          setIsMenu(false);
+        }}
+      >
         <View
           style={{
             width: "100%",

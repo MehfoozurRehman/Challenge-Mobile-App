@@ -1,16 +1,16 @@
-import * as React from 'react';
-import {Text, View, Button, Image as ImageComponent} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Svg, {Path, Defs, Pattern, Use, Image} from 'react-native-svg';
-import {whiteColor} from '../constants/colors';
-import FavoriteScreen from '../screens/FavoriteScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import * as React from "react";
+import { Text, View, Button, Image as ImageComponent } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Svg, { Path, Defs, Pattern, Use, Image } from "react-native-svg";
+import { whiteColor } from "../constants/colors";
+import FavoriteScreen from "../screens/FavoriteScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 
-function SettingsScreen({navigation}) {
+function SettingsScreen({ navigation }) {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text style={{color: whiteColor, marginBottom: 10}}>Settings!</Text>
-      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text style={{ color: whiteColor, marginBottom: 10 }}>Settings!</Text>
+      <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
     </View>
   );
 }
@@ -23,35 +23,40 @@ export default function BottomBar() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: 'black',
+          backgroundColor: "black",
           height: 50,
           borderWidth: 0,
         },
       }}
       sceneContainerStyle={{
-        backgroundColor: '#242424',
-      }}>
+        backgroundColor: "#242424",
+      }}
+    >
       <Tab.Screen
         name="Favorite"
         component={FavoriteScreen}
         options={{
-          tabBarLabel: ({focused}) =>
-            focused ? <Text style={{fontSize: 10}}>Favorite</Text> : null,
-          tabBarIcon: focused => (
+          tabBarLabel: ({ focused }) =>
+            focused ? (
+              <Text style={{ fontSize: 10, color: "#ffffff" }}>Favorite</Text>
+            ) : null,
+          tabBarIcon: (focused) => (
             <Svg
               width={25}
               height={25}
               viewBox="0 0 25 25"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink">
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
               <Path fill="url(#pattern0)" d="M0 0H25V25H0z" />
               <Defs>
                 <Pattern
                   id="pattern0"
                   patternContentUnits="objectBoundingBox"
                   width={1}
-                  height={1}>
+                  height={1}
+                >
                   <Use xlinkHref="#image0_227_522" transform="scale(.01111)" />
                 </Pattern>
                 <Image
@@ -69,23 +74,27 @@ export default function BottomBar() {
         name="Settings"
         component={SettingsScreen}
         options={{
-          tabBarLabel: ({focused}) =>
-            focused ? <Text style={{fontSize: 10}}>Search</Text> : null,
-          tabBarIcon: focused => (
+          tabBarLabel: ({ focused }) =>
+            focused ? (
+              <Text style={{ fontSize: 10, color: "#ffffff" }}>Search</Text>
+            ) : null,
+          tabBarIcon: (focused) => (
             <Svg
               width={25}
               height={25}
               viewBox="0 0 25 25"
               fill="red"
               xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink">
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
               <Path fill="url(#pattern0)" d="M0 0H25V25H0z" />
               <Defs>
                 <Pattern
                   id="pattern0"
                   patternContentUnits="objectBoundingBox"
                   width={1}
-                  height={1}>
+                  height={1}
+                >
                   <Use xlinkHref="#image0_227_521" transform="scale(.01111)" />
                 </Pattern>
                 <Image
@@ -103,23 +112,27 @@ export default function BottomBar() {
         name="Add"
         component={SettingsScreen}
         options={{
-          tabBarLabel: ({focused}) =>
-            focused ? <Text style={{fontSize: 10}}>Add</Text> : null,
-          tabBarIcon: focused => (
+          tabBarLabel: ({ focused }) =>
+            focused ? (
+              <Text style={{ fontSize: 10, color: "#ffffff" }}>Add</Text>
+            ) : null,
+          tabBarIcon: (focused) => (
             <Svg
               width={25}
               height={25}
               viewBox="0 0 25 25"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink">
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
               <Path fill="url(#pattern0)" d="M0 0H25V25H0z" />
               <Defs>
                 <Pattern
                   id="pattern0"
                   patternContentUnits="objectBoundingBox"
                   width={1}
-                  height={1}>
+                  height={1}
+                >
                   <Use xlinkHref="#image0_227_520" transform="scale(.01111)" />
                 </Pattern>
                 <Image
@@ -137,23 +150,29 @@ export default function BottomBar() {
         name="Notification"
         component={SettingsScreen}
         options={{
-          tabBarLabel: ({focused}) =>
-            focused ? <Text style={{fontSize: 10}}>Notification</Text> : null,
-          tabBarIcon: focused => (
+          tabBarLabel: ({ focused }) =>
+            focused ? (
+              <Text style={{ fontSize: 10, color: "#ffffff" }}>
+                Notification
+              </Text>
+            ) : null,
+          tabBarIcon: (focused) => (
             <Svg
               width={25}
               height={25}
               viewBox="0 0 25 25"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink">
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
               <Path fill="url(#pattern0)" d="M0 0H25V25H0z" />
               <Defs>
                 <Pattern
                   id="pattern0"
                   patternContentUnits="objectBoundingBox"
                   width={1}
-                  height={1}>
+                  height={1}
+                >
                   <Use xlinkHref="#image0_227_519" transform="scale(.01111)" />
                 </Pattern>
                 <Image
@@ -168,15 +187,17 @@ export default function BottomBar() {
         }}
       />
       <Tab.Screen
-        name="User"
+        name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarLabel: ({focused}) =>
-            focused ? <Text style={{fontSize: 10}}>Home</Text> : null,
-          tabBarIcon: focused => (
+          tabBarLabel: ({ focused }) =>
+            focused ? (
+              <Text style={{ fontSize: 10, color: "#ffffff" }}>Profile</Text>
+            ) : null,
+          tabBarIcon: (focused) => (
             <ImageComponent
               source={{
-                uri: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+                uri: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
               }}
               style={{
                 width: 28,
