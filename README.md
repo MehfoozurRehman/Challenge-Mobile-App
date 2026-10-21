@@ -13,7 +13,7 @@ The app appears to explore a profile-based social flow: people sign in, edit a p
 - Login and sign-up screens that move the user into the app without checking credentials.
 - A profile screen with a link to an edit-profile screen.
 - A favourites screen of user cards, each with a rating control and actions for rating and messaging.
-- A comments component for showing and adding comments on a favourite.
+- A comments component that displays comments on a favourite, with a close action. It has no input field yet.
 - Stack navigation with a bottom tab bar, built on React Navigation 6.
 
 ## How it's built
